@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sbwebappdeployment
+  namespace: devopsaws
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: demowebapp
+      version: v2
+      colour: green
+  template:
+    metadata:
+      labels:
+        app: demowebapp
+        version: v2
+        colour: green
+    spec:
+      containers:
+      - name: sbwebappcontainer
+        image: devopswthaws58/sb-web-app
+        resources:
+        ports:
+        - containerPort: 8080
+---
+    
+
