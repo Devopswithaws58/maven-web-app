@@ -1,28 +1,33 @@
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: sbwebappdeployment
-  namespace: devopsaws
+  name: mavenwebappdeployment
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
-      app: demowebapp
-      version: v2
-      colour: green
+      app: mavenwebapp
   template:
     metadata:
       labels:
-        app: demowebapp
-        version: v2
-        colour: green
+        app: mavenwebapp
     spec:
       containers:
-      - name: sbwebappcontainer
-        image: devopswthaws58/sb-web-app
+      - name: mavenwebappdeploymentcontainer
+        image: devopswthaws58/maven-web-app
         resources:
         ports:
         - containerPort: 8080
 ---
-    
-
+apiVersion: v1
+kind: Service
+metadata:
+  name: mavenwebappsvc
+spec:
+  type: LoadBalancer
+  selector:
+    app: mavenwebapp
+  ports:
+  - port: 80
+    targetPort: 8080
