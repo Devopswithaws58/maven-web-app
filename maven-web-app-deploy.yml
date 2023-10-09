@@ -16,6 +16,7 @@ spec:
       containers:
       - name: mavenwebappdeploymentcontainer
         image: devopswthaws58/maven-web-app
+        imagePullPolicy: Always
         resources:
         ports:
         - containerPort: 8080
