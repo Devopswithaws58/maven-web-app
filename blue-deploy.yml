@@ -1,0 +1,31 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mavenwebappdblueeploy
+spec:
+  replicas: 2
+  strategy:
+    type: RollingUpdate
+  selector:
+    matchLabels:
+      app: mavenwebapp
+      version: v1
+      colour: blue
+  template:
+    metadata: 
+      labels:
+        app: mavenwebapp
+        version: v1
+        colour: blue
+    spec:
+      containers:
+      - name: mavenwebblueappcontainer
+        image: devopswthaws58/maven-web-app
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 8080
+---

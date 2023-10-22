@@ -1,0 +1,31 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mavenwebgreenappdeploy
+spec:
+  replicas: 2
+  strategy:
+    type: RollingUpdate
+  selector:
+    matchLabels:
+      app: mavenwebapp
+      version: v2
+      colour: green
+  template:
+    metadata: 
+      labels:
+        app: mavenwebapp
+        version: v2
+        colour: green
+    spec:
+      containers:
+      - name: mavenwebgreenappcontainer
+        image: devopswthaws58/maven-web-app
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 8080
+---

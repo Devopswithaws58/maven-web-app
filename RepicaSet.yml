@@ -1,0 +1,36 @@
+---
+apiVersion: v1
+kind: ReplicationSet
+metadata:
+  namespace: devopsaws-ns
+  name: javawebapprs
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: mavenwebapp
+  template:
+    metadata:
+      name: mavenwebapppod
+      labels:
+        app: mavenwebapp
+    spec:
+      containers:
+      - name: mavenwebappcontainer
+        image: devopswthaws58/maven-web-app
+        ports:
+          - containerPort: 8080
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: mavenwebappsvc
+  namespace: devopsaws-ns
+spec:
+  type: LoadBalancer
+  selector:
+    app: mavenwebapp
+  ports:
+    - port: 80
+      targetPort: 8080
+...
