@@ -1,6 +1,6 @@
 <html>
 <body>
-<h1><font color='pink'> Welcome to Devops AWS Classes <font></h1>
+<h1><font color='yellow'> Welcome to Devops AWS Classes <font></h1>
 
 <a href="https://ashokitech.com/uploads/notes/712233579_1689128577.pdf"> Click Here To See recorded videos of DevOps with AWS</a>
   
