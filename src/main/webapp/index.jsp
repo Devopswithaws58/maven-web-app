@@ -1,4 +1,9 @@
+<!DOCTYPE html>
 <html>
+<head>
+  <title>maven web app</title>
+</head>
+<body>
 <body>
 <h1><font color='blue'> Welcome to Devops AWS Classes <font></h1>
 
