@@ -1,4 +1,8 @@
+<!DOCTYPE html>
 <html>
+<head>
+  <title>HTML Elements Reference</title>
+</head>
 <body>
 <h1>
   <span style="color:#000000"> Welcome to DevOps AWS Classes 
